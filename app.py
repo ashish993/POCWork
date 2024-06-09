@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 
 # Initialize the code generation model
-code_generator = pipeline("text-generation", model="CarperAI/diff-codegen-2b-v2")
+code_generator = pipeline("text2text-generation", model="vennify/t5-base-grammar-correction")
 
 st.title('AI Code Generator')
 

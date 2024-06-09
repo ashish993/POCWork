@@ -12,13 +12,9 @@ requirement = st.text_area("Enter your requirement description here:")
 # User input for the programming language
 language = st.text_input("Enter the programming language:")
 
-# Generate button
-if st.button('Generate Code'):
-    # Use the model to generate code
-    generated_code = code_generator(f"{requirement} in {language}", max_length=512)[0]['generated_text']    
-    # Display the generated code
-    st.code(generated_code)
-    
+submit = form.form_submit_button('Generate Code')
 
-# Instructions for deploying the app can be found in the Streamlit documentation
-# Please refer to the official Streamlit deployment guide for detailed steps
+if submit:
+    result = code_generator(requirement)[0]
+    label = result['label']
+    st.success(f'{label}')

@@ -15,7 +15,7 @@ language = st.text_input("Enter the programming language:")
 # Generate button
 if st.button('Generate Code'):
     # Use the model to generate code
-    generated_code = code_generator(f"{requirement} in {language}", max_length=512)[0]['generated_text']
+    generated_code = code_generator(f"{requirement} in {language}", max_length=512)[0]['generated_text'])
     
     # Display the generated code
     st.code(generated_code)

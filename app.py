@@ -6,7 +6,7 @@ from transformers import pipeline
 def load_model():
     try:
         # Replace 'model-name' with the actual model name from Hugging Face
-        model = pipeline('text-generation', model="Bin12345/AutoCoder")
+        model = pipeline("text-generation", model="Bin12345/AutoCoder")
         return model
     except Exception as e:
         st.error(f"Error loading model: {e}")

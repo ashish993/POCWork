@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 
 # Initialize the code generation model
-code_generator = pipeline('text-to-code', model='codeparrot/codeparrot')
+#code_generator = pipeline('text-to-code', model='codeparrot/codeparrot')
 
 st.title('AI Code Generator')
 

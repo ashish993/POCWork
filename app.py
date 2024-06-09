@@ -5,7 +5,8 @@ from transformers import pipeline, set_seed
 huggingface_token = "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"
 
 # Initialize the code generation model with the Hugging Face API token
-code_generator = pipeline('text-to-code', model='codeparrot/code-generation-models', use_auth_token=huggingface_token)
+#code_generator = pipeline('text-to-code', model='codeparrot/code-generation-models', use_auth_token=huggingface_token)
+code_generator = pipeline("text-generation", model="mistralai/Codestral-22B-v0.1")
 
 st.title('AI Code Generator')
 

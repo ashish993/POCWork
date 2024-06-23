@@ -1,0 +1,21 @@
+// Fetching CPU and Memory metrics for all VMs
+Perf
+| where TimeGenerated > ago(30d)  // Specify the time span here
+| where CounterName == "% Processor Time" or CounterName == "Available MBytes"
+| extend CounterValueMB = iff(CounterName == "Available MBytes", CounterValue * 1024 * 1024, CounterValue)  // Convert MBytes to bytes if it's Available MBytes
+| summarize 
+    MaxCPU = maxif(CounterValue, CounterName == "% Processor Time"),
+    MinCPU = minif(CounterValue, CounterName == "% Processor Time"),
+    AvgCPU = avgif(CounterValue, CounterName == "% Processor Time"),
+    AvgAvailableMemoryMB = avgif(CounterValue, CounterName == "Available MBytes")
+by Computer
+| join kind=inner (
+    // Get the total memory for each computer
+    Perf
+    | where TimeGenerated > ago(30d)
+    | where CounterName == "Memory"
+    | summarize TotalMemoryMB = max(CounterValue) by Computer
+) on Computer
+| extend TotalMemoryMB = TotalMemoryMB * 1024 * 1024  // Convert MB to bytes
+| extend AvgMemoryUsedPercentage = (1 - (AvgAvailableMemoryMB * 1024 * 1024 / TotalMemoryMB)) * 100
+| project Computer, MaxCPU, MinCPU, AvgCPU, AvgMemoryUsedPercentage

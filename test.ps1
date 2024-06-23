@@ -3,12 +3,7 @@ Connect-AzAccount
 
 # Set the parameters
 $ResourceGroupName = "yourResourceGroupName"
-$VMName = "yourVMName"
 $TimeSpan = 30 # Specify the time span in days
-
-# Get the VM resource ID
-$vm = Get-AzVM -ResourceGroupName $ResourceGroupName -Name $VMName
-$resourceId = $vm.Id
 
 # Get the start and end times for the metrics
 $EndTime = Get-Date
@@ -22,7 +17,7 @@ function Get-MetricData {
         [datetime]$StartTime,
         [datetime]$EndTime
     )
-
+    
     $metrics = Get-AzMetric -ResourceId $ResourceId `
                             -TimeGrain "PT1H" `
                             -StartTime $StartTime `
@@ -32,37 +27,62 @@ function Get-MetricData {
     return $metrics.Data
 }
 
-# Fetch CPU metrics
-$cpuMetrics = Get-MetricData -ResourceId $resourceId -MetricName "Percentage CPU" -StartTime $StartTime -EndTime $EndTime
-$averageCpu = ($cpuMetrics | Measure-Object Average -Property Average).Average
-$maxCpu = ($cpuMetrics | Measure-Object Maximum -Property Maximum).Maximum
-$minCpu = ($cpuMetrics | Measure-Object Minimum -Property Minimum).Minimum
+# Function to get VM metrics and identify underutilization
+function Get-VMMetrics {
+    param (
+        [Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine]$VM
+    )
+    
+    $resourceId = $VM.Id
+    $vmSize = Get-AzVMSize -Location $VM.Location | Where-Object { $_.Name -eq $VM.HardwareProfile.VmSize }
+    $totalMemory = $vmSize.MemoryInMB * 1024 * 1024 # Convert MB to bytes
 
-# Fetch Memory metrics
-$memoryMetrics = Get-MetricData -ResourceId $resourceId -MetricName "Available Memory Bytes" -StartTime $StartTime -EndTime $EndTime
-$averageMemory = ($memoryMetrics | Measure-Object Average -Property Average).Average
-$maxMemory = ($memoryMetrics | Measure-Object Maximum -Property Maximum).Maximum
+    # Fetch CPU metrics
+    $cpuMetrics = Get-MetricData -ResourceId $resourceId -MetricName "Percentage CPU" -StartTime $StartTime -EndTime $EndTime
+    $averageCpu = ($cpuMetrics | Measure-Object Average -Property Average).Average
+    $maxCpu = ($cpuMetrics | Measure-Object Maximum -Property Maximum).Maximum
+    $minCpu = ($cpuMetrics | Measure-Object Minimum -Property Minimum).Minimum
 
-# Output the results
-Write-Output "CPU Metrics for VM $VMName in Resource Group $ResourceGroupName:"
-Write-Output "Average CPU: $averageCpu%"
-Write-Output "Maximum CPU: $maxCpu%"
-Write-Output "Minimum CPU: $minCpu%"
+    # Fetch Memory metrics
+    $memoryMetrics = Get-MetricData -ResourceId $resourceId -MetricName "Available Memory Bytes" -StartTime $StartTime -EndTime $EndTime
+    $averageMemory = ($memoryMetrics | Measure-Object Average -Property Average).Average
+    $maxMemory = ($memoryMetrics | Measure-Object Maximum -Property Maximum).Maximum
 
-Write-Output "`nMemory Metrics for VM $VMName in Resource Group $ResourceGroupName:"
-Write-Output "Average Available Memory: $averageMemory bytes"
-Write-Output "Maximum Available Memory: $maxMemory bytes"
+    # Calculate memory usage percentage
+    $usedMemoryPercentage = (($totalMemory - $averageMemory) / $totalMemory) * 100
 
-# Identify underutilized VMs
-$cpuThreshold = 20 # Define your threshold for CPU underutilization
-$memoryThreshold = 0.8 # Define your threshold for Memory underutilization (80% or more utilization)
+    # Identify underutilized VMs
+    $cpuThreshold = 20 # Define your threshold for CPU underutilization
+    $memoryThreshold = 20 # Define your threshold for Memory underutilization (80% or more utilization)
 
-$vmSize = Get-AzVMSize -ResourceGroupName $ResourceGroupName -VMName $VMName
-$totalMemory = $vmSize.MemoryInMB * 1024 * 1024 # Convert MB to bytes
-$usedMemoryPercentage = (($totalMemory - $averageMemory) / $totalMemory) * 100
+    $isUnderutilized = $averageCpu -lt $cpuThreshold -and $usedMemoryPercentage -lt $memoryThreshold
 
-if ($averageCpu -lt $cpuThreshold -and $usedMemoryPercentage -lt $memoryThreshold) {
-    Write-Output "VM $VMName is underutilized."
-} else {
-    Write-Output "VM $VMName is not underutilized."
+    # Recommend new size if underutilized
+    $recommendedSize = $null
+    if ($isUnderutilized) {
+        $recommendedSize = Get-AzVMSize -Location $VM.Location | Where-Object { $_.NumberOfCores -lt $vmSize.NumberOfCores } | Sort-Object -Property NumberOfCores, MemoryInMB | Select-Object -First 1
+    }
+
+    return [PSCustomObject]@{
+        VMName = $VM.Name
+        AverageCPU = [math]::Round($averageCpu, 2)
+        MaxCPU = [math]::Round($maxCpu, 2)
+        MinCPU = [math]::Round($minCpu, 2)
+        AverageMemoryUsage = [math]::Round(($totalMemory - $averageMemory) / 1MB, 2)
+        MaxMemoryUsage = [math]::Round(($totalMemory - $maxMemory) / 1MB, 2)
+        IsUnderutilized = $isUnderutilized
+        RecommendedSize = if ($recommendedSize) { $recommendedSize.Name } else { "N/A" }
+    }
 }
+
+# Get all VMs in the resource group
+$vms = Get-AzVM -ResourceGroupName $ResourceGroupName
+
+# Get metrics for all VMs
+$vmMetrics = $vms | ForEach-Object { Get-VMMetrics -VM $_ }
+
+# Display results in a table format
+$vmMetrics | Format-Table -Property VMName, AverageCPU, MaxCPU, MinCPU, AverageMemoryUsage, MaxMemoryUsage, IsUnderutilized, RecommendedSize -AutoSize
+
+# Export the results to a CSV file
+$vmMetrics | Export-Csv -Path "VM_Metrics_Report.csv" -NoTypeInformation

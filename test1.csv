@@ -1,8 +1,3 @@
-Sure! Below are a few additional questions related to a **trading platform** that involve **sensitive information** or **critical issues**. These questions cover topics such as **trade execution issues**, **security concerns**, **account problems**, and **compliance issues** that users may encounter on a trading platform.
-
-Here's an updated section of the questionnaire with additional **trading platform** related questions:
-
-```csv
 Question,Sentiment,Emotion Detection,Intent,Brand Impact,Sensitivity,Flag Critical Issue
 "I'm not sure if I love it or hate it, but it works most of the time.",Neutral,Confusion,Inquiry,Low,No,No
 "Your customer service is great, but the product is disappointing.",Negative,Frustration,Complaint,Negative,No,No
@@ -72,4 +67,12 @@ Question,Sentiment,Emotion Detection,Intent,Brand Impact,Sensitivity,Flag Critic
 "Can you please explain why my sensitive medical information was not encrypted on your platform?",Negative,Anger,Complaint,High,Yes,Yes
 "Why is my trade execution delayed? This has cost me significant money.",Negative,Frustration,Complaint,High,No,No
 "I can't log into my trading account. Please reset my password immediately.",Negative,Frustration,Complaint,High,Yes,No
-"I have reported an issue with my trade, but I have not received any
+"I have reported an issue with my trade, but I have not received any response. This is unacceptable.",Negative,Anger,Complaint,High,No,No
+"My account has been suspended, and I haven’t received any reason for it. Please explain!",Negative,Confusion,Complaint,High,Yes,No
+"Why was my withdrawal request canceled without any notification or explanation?",Negative,Anger,Complaint,High,Yes,Yes
+"I noticed unusual activity in my trading account. Is my personal information compromised?",Negative,Fear,Complaint,High,Yes,Yes
+"I'm having trouble with a margin call. Can someone explain how to resolve this?",Neutral,Concern,Inquiry,Neutral,No,No
+"I didn't receive the margin call notification in time and lost a significant amount. This is a serious issue!",Negative,Frustration,Complaint,High,Yes,Yes
+"My orders aren't being processed. Can someone explain why my trades are stuck?",Negative,Frustration,Complaint,High,No,No
+"Can I get an audit of all my past trades to ensure there were no errors or discrepancies?",Neutral,Concern,Inquiry,Neutral,Yes,No
+"I need to verify if my account is in compliance with the latest regulations. Please assist.",Neutral,Concern,Inquiry,Neutral,Yes,No

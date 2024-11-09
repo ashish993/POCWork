@@ -1,3 +1,8 @@
+Sure! Below are a few additional questions related to a **trading platform** that involve **sensitive information** or **critical issues**. These questions cover topics such as **trade execution issues**, **security concerns**, **account problems**, and **compliance issues** that users may encounter on a trading platform.
+
+Here's an updated section of the questionnaire with additional **trading platform** related questions:
+
+```csv
 Question,Sentiment,Emotion Detection,Intent,Brand Impact,Sensitivity,Flag Critical Issue
 "I'm not sure if I love it or hate it, but it works most of the time.",Neutral,Confusion,Inquiry,Low,No,No
 "Your customer service is great, but the product is disappointing.",Negative,Frustration,Complaint,Negative,No,No
@@ -55,3 +60,16 @@ Question,Sentiment,Emotion Detection,Intent,Brand Impact,Sensitivity,Flag Critic
 "The product is decent, but I really expected something more sophisticated.",Neutral,Disappointment,Feedback,Neutral,No,No
 "Not a fan, but I’ll keep it for the time being.",Neutral,Indifference,Decision,Low,No,No
 "I was excited at first, but now I’m not sure if it was worth it.",Negative,Regret,Complaint,Negative,No,No
+"Please confirm if my personal data is safe with your platform.",Neutral,Concern,Inquiry,Neutral,Yes,No
+"Why did you charge my credit card twice for the same order?",Negative,Frustration,Complaint,Negative,Yes,Yes
+"I am seeing unauthorized charges on my bank account linked to your service.",Negative,Anger,Complaint,High,Yes,Yes
+"Your website stored my credit card information without my consent. This is a breach of privacy!",Negative,Anger,Complaint,High,Yes,Yes
+"I feel like my personal information might be at risk after my interaction with your platform.",Negative,Fear,Complaint,High,Yes,Yes
+"I want to report fraudulent activity related to my account, please assist immediately.",Negative,Anger,Complaint,High,Yes,Yes
+"I need to cancel my subscription, but I was charged again for this month. Can you refund me?",Negative,Frustration,Complaint,Negative,No,No
+"I'm seeing charges I didn't authorize on my credit card statement. Please look into this.",Negative,Anger,Complaint,High,Yes,Yes
+"I believe my account was hacked. I need immediate assistance with recovering my information.",Negative,Fear,Complaint,High,Yes,Yes
+"Can you please explain why my sensitive medical information was not encrypted on your platform?",Negative,Anger,Complaint,High,Yes,Yes
+"Why is my trade execution delayed? This has cost me significant money.",Negative,Frustration,Complaint,High,No,No
+"I can't log into my trading account. Please reset my password immediately.",Negative,Frustration,Complaint,High,Yes,No
+"I have reported an issue with my trade, but I have not received any

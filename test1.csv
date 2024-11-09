@@ -1,57 +1,57 @@
-Question,Sentiment
-"I'm not sure if I love it or hate it, but it works most of the time.",Neutral
-"Your customer service is great, but the product is disappointing.",Negative
-"I didn't expect this to be so good, but it's still not perfect.",Neutral
-"Very frustrating experience, but I think I'll give you another chance.",Neutral
-"Not bad, but I wouldn't say it's great either.",Neutral
-"Wow, I wasn't impressed at first, but now I can't imagine my day without it.",Positive
-"Delivery was fast, but the product is a letdown.",Negative
-"Everything was perfect except for the fact that the item doesn't fit me well.",Neutral
-"I'm not really satisfied, but it's not the worst thing I've ever bought.",Neutral
-"I’ve never been this confused about a product, but I guess it’s fine.",Neutral
-"At first, I hated it, but over time, I started to appreciate it more.",Positive
-"Great features, but it’s just not what I needed.",Neutral
-"Customer service was fast, but the product was a nightmare.",Negative
-"I really like it, but it could use some minor improvements.",Neutral
-"Honestly, I expected more, but it’s still decent for the price.",Neutral
-"I can’t decide whether this is worth it or not, but I’ll stick with it for now.",Neutral
-"Your product is amazing, but I found the price a bit too high.",Neutral
-"Totally disappointing, though the delivery was quick and on point.",Negative
-"The product is fine, but there were some annoying issues with the setup.",Neutral
-"I’m on the fence about it, but I guess I’ll keep it for now.",Neutral
-"I liked it at first, but now I’m kind of regretting it.",Negative
-"The quality’s good, but I still think I could’ve gotten a better deal elsewhere.",Neutral
-"Great idea, but execution could use some work.",Neutral
-"I'm really torn between liking it and being frustrated with it.",Neutral
-"I thought I would hate it, but it's surprisingly useful!",Positive
-"Your product is exactly what I needed, but the website needs improvement.",Neutral
-"I love it, though the price could be a little more affordable.",Neutral
-"Everything about this was perfect, except for the unexpected delay.",Neutral
-"Your service was quick, but the product didn’t meet expectations.",Negative
-"The product looks fine, but the packaging was terrible.",Negative
-"It’s good, but I thought it would be much better given the hype.",Neutral
-"Not exactly what I wanted, but I’m not disappointed enough to return it.",Neutral
-"The product works fine, but it’s nothing special.",Neutral
-"I had a few issues, but overall it’s still worth it.",Neutral
-"Perfect in theory, but in practice, it’s not as useful as I expected.",Neutral
-"Good, but the quality control could be better.",Neutral
-"It works, but it’s definitely not as great as I thought it would be.",Neutral
-"I’m happy with the product, but the instructions were unclear.",Neutral
-"Overall decent, but I can’t say I’m thrilled with it.",Neutral
-"I can see the potential, but it’s not quite there yet.",Neutral
-"Love the product, but not the experience of setting it up.",Neutral
-"Great purchase, but I do wish there were more features.",Neutral
-"Better than I expected, but still far from perfect.",Neutral
-"Customer service was excellent, but the product didn’t deliver.",Negative
-"I’m really unsure how I feel about it, but I’ll give it a try for a while.",Neutral
-"I don’t think I’ll recommend it to anyone, but I’m not mad about it either.",Neutral
-"I like it, but I can see why others might not.",Neutral
-"Good product, but there were some things that didn’t quite meet expectations.",Neutral
-"Great customer service, but my product arrived defective.",Negative
-"It’s okay, but I’m honestly expecting more from this brand.",Neutral
-"I thought I’d like it, but I’m honestly a little disappointed.",Negative
-"I'm neutral about it; some parts are great, and others need work.",Neutral
-"I can’t decide whether this was a good buy or a waste of money.",Neutral
-"The product is decent, but I really expected something more sophisticated.",Neutral
-"Not a fan, but I’ll keep it for the time being.",Neutral
-"I was excited at first, but now I’m not sure if it was worth it.",Negative
+Question,Sentiment,Emotion Detection,Intent,Brand Impact,Sensitivity,Flag Critical Issue
+"I'm not sure if I love it or hate it, but it works most of the time.",Neutral,Confusion,Inquiry,Low,No,No
+"Your customer service is great, but the product is disappointing.",Negative,Frustration,Complaint,Negative,No,No
+"I didn't expect this to be so good, but it's still not perfect.",Neutral,Surprise,Feedback,Low,No,No
+"Very frustrating experience, but I think I'll give you another chance.",Neutral,Frustration,Feedback,Neutral,No,No
+"Not bad, but I wouldn't say it's great either.",Neutral,Indifference,Feedback,Low,No,No
+"Wow, I wasn't impressed at first, but now I can't imagine my day without it.",Positive,Surprise,Appreciation,Positive,No,No
+"Delivery was fast, but the product is a letdown.",Negative,Disappointment,Complaint,Negative,No,No
+"Everything was perfect except for the fact that the item doesn't fit me well.",Neutral,Frustration,Complaint,Neutral,No,No
+"I'm not really satisfied, but it's not the worst thing I've ever bought.",Neutral,Indifference,Feedback,Low,No,No
+"I’ve never been this confused about a product, but I guess it’s fine.",Neutral,Confusion,Inquiry,Low,No,No
+"At first, I hated it, but over time, I started to appreciate it more.",Positive,Relief,Appreciation,Positive,No,No
+"Great features, but it’s just not what I needed.",Neutral,Indifference,Feedback,Neutral,No,No
+"Customer service was fast, but the product was a nightmare.",Negative,Frustration,Complaint,Negative,No,No
+"I really like it, but it could use some minor improvements.",Neutral,Appreciation,Feedback,Neutral,No,No
+"Honestly, I expected more, but it’s still decent for the price.",Neutral,Disappointment,Feedback,Neutral,No,No
+"I can’t decide whether this is worth it or not, but I’ll stick with it for now.",Neutral,Confusion,Decision,Low,No,No
+"Your product is amazing, but I found the price a bit too high.",Neutral,Appreciation,Feedback,Neutral,No,No
+"Totally disappointing, though the delivery was quick and on point.",Negative,Disappointment,Complaint,Negative,No,No
+"The product is fine, but there were some annoying issues with the setup.",Neutral,Frustration,Complaint,Neutral,No,No
+"I’m on the fence about it, but I guess I’ll keep it for now.",Neutral,Indecision,Decision,Low,No,No
+"I liked it at first, but now I’m kind of regretting it.",Negative,Regret,Complaint,Negative,No,No
+"The quality’s good, but I still think I could’ve gotten a better deal elsewhere.",Neutral,Disappointment,Feedback,Neutral,No,No
+"Great idea, but execution could use some work.",Neutral,Disappointment,Feedback,Neutral,No,No
+"I'm really torn between liking it and being frustrated with it.",Neutral,Confusion,Feedback,Neutral,No,No
+"I thought I would hate it, but it's surprisingly useful!",Positive,Surprise,Appreciation,Positive,No,No
+"Your product is exactly what I needed, but the website needs improvement.",Neutral,Appreciation,Feedback,Neutral,No,No
+"I love it, though the price could be a little more affordable.",Neutral,Appreciation,Feedback,Neutral,No,No
+"Everything about this was perfect, except for the unexpected delay.",Neutral,Disappointment,Feedback,Low,No,No
+"Your service was quick, but the product didn’t meet expectations.",Negative,Disappointment,Complaint,Negative,No,No
+"The product looks fine, but the packaging was terrible.",Negative,Disappointment,Complaint,Negative,No,No
+"It’s good, but I thought it would be much better given the hype.",Neutral,Disappointment,Feedback,Neutral,No,No
+"Not exactly what I wanted, but I’m not disappointed enough to return it.",Neutral,Indifference,Feedback,Low,No,No
+"The product works fine, but it’s nothing special.",Neutral,Indifference,Feedback,Low,No,No
+"I had a few issues, but overall it’s still worth it.",Neutral,Indifference,Feedback,Neutral,No,No
+"Perfect in theory, but in practice, it’s not as useful as I expected.",Neutral,Disappointment,Feedback,Neutral,No,No
+"Good, but the quality control could be better.",Neutral,Disappointment,Feedback,Neutral,No,No
+"It works, but it’s definitely not as great as I thought it would be.",Neutral,Disappointment,Feedback,Neutral,No,No
+"I’m happy with the product, but the instructions were unclear.",Neutral,Confusion,Complaint,Neutral,No,No
+"Overall decent, but I can’t say I’m thrilled with it.",Neutral,Indifference,Feedback,Low,No,No
+"I can see the potential, but it’s not quite there yet.",Neutral,Indifference,Feedback,Low,No,No
+"Love the product, but not the experience of setting it up.",Neutral,Frustration,Complaint,Neutral,No,No
+"Great purchase, but I do wish there were more features.",Neutral,Indifference,Feedback,Neutral,No,No
+"Better than I expected, but still far from perfect.",Neutral,Indifference,Feedback,Low,No,No
+"Customer service was excellent, but the product didn’t deliver.",Negative,Frustration,Complaint,Negative,No,No
+"I’m really unsure how I feel about it, but I’ll give it a try for a while.",Neutral,Indecision,Feedback,Low,No,No
+"I don’t think I’ll recommend it to anyone, but I’m not mad about it either.",Neutral,Indifference,Feedback,Low,No,No
+"I like it, but I can see why others might not.",Neutral,Indifference,Feedback,Low,No,No
+"Good product, but there were some things that didn’t quite meet expectations.",Neutral,Disappointment,Feedback,Neutral,No,No
+"Great customer service, but my product arrived defective.",Negative,Frustration,Complaint,Negative,No,No
+"It’s okay, but I’m honestly expecting more from this brand.",Neutral,Disappointment,Feedback,Neutral,No,No
+"I thought I’d like it, but I’m honestly a little disappointed.",Negative,Disappointment,Complaint,Negative,No,No
+"I'm neutral about it; some parts are great, and others need work.",Neutral,Indifference,Feedback,Low,No,No
+"I can’t decide whether this was a good buy or a waste of money.",Neutral,Indecision,Decision,Low,No,No
+"The product is decent, but I really expected something more sophisticated.",Neutral,Disappointment,Feedback,Neutral,No,No
+"Not a fan, but I’ll keep it for the time being.",Neutral,Indifference,Decision,Low,No,No
+"I was excited at first, but now I’m not sure if it was worth it.",Negative,Regret,Complaint,Negative,No,No

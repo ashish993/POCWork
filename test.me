@@ -1,0 +1,334 @@
+# CYBER SECURITY RISK ASSESSMENT REPORT
+
+## PROJECT NAME
+
+
+Street Address  
+City, State and Zip
+
+webaddress.com
+
+VERSION 0.0.0
+
+00/00/0000
+
+| PREPARED BY |  | DATE |  |
+|-------------|--|------|--|
+|             |  |      |  |
+| REVIEWED BY |  | DATE |  |
+|             |  |      |  |
+| APPROVED BY |  | DATE |  |
+|             |  |      |  |
+
+---
+
+## TABLE OF CONTENTS
+1. PROJECT OWNERSHIP
+2. INCIDENT SUMMARY & ANALYSIS
+3. PLAN VERSION
+4. RISK MANAGEMENT PROCESS
+5. RESOURCE REQUIREMENTS
+6. TOOLS
+7. DATA
+8. TEAM
+9. ROLES & RESPONSIBILITIES
+10. FINANCIAL IMPACT
+11. ESTIMATED FUNDS REQUIRED & BUDGETARY IMPACT
+12. TIMELINE IMPACT
+13. RISK MONITORING
+14. REVIEWS OF RISKS & ISSUES
+15. MONITORING
+16. REPORTING
+17. RISK CATEGORIES
+18. RISK ASSESSMENT MATRIX
+19. MITIGATION GRADING MATRIX
+20. STAKEHOLDER TOLERANCES
+21. ATTACHMENTS
+
+---
+
+## PROJECT OWNERSHIP
+
+**PROJECT NAME:** AWS SaaS Cybersecurity Incident Drill 2025  
+**PROJECT OVERVIEW:** Annual cybersecurity drill to assess and improve the company's resilience against DDoS and WAF attacks in an AWS-hosted SaaS environment. The drill validates technical controls, incident response, and communication protocols, ensuring compliance with industry standards and customer expectations.  
+**PROJECT MANAGER NAME:** John Smith (CISO)  
+**CONTACT INFO:**  
+- PHONE: +1-555-123-4567  
+- EMAIL: john.smith@company.com  
+- MAILING ADDRESS: 123 Cloud Lane, San Francisco, CA 94105, USA
+
+---
+
+## INCIDENT SUMMARY & ANALYSIS
+
+### Scenario
+A comprehensive cybersecurity incident drill was conducted by the company, a SaaS-based organization hosted on AWS, to test resilience against Distributed Denial of Service (DDoS) attacks and Web Application Firewall (WAF) evasion attempts. The drill simulated real-world attack scenarios targeting both network and application layers, including a flood of ICMP packets and attempts to bypass WAF protections. The objective was to validate the effectiveness of AWS-native security controls, incident response processes, and communication protocols.
+
+### Employees Engaged in the Drill
+- **John Smith** – Chief Information Security Officer (CISO)
+- **Priya Patel** – Security Operations Lead
+- **Alex Chen** – Cloud Infrastructure Engineer
+- **Maria Garcia** – Application Security Specialist
+- **David Lee** – Incident Response Analyst
+- **Sophie Dubois** – Communications Manager
+- **Ravi Kumar** – DevOps Engineer
+- **Emma Johnson** – Compliance Officer
+
+### NIST Cybersecurity Framework (CSF) Analysis
+| Phase    | Description |
+|----------|-------------|
+| **Identify** | Regular audits and threat modeling identified potential DDoS and WAF evasion risks. AWS Security Hub and GuardDuty were used for continuous risk assessment. |
+| **Protect**  | AWS WAF rules, rate limiting, and Shield Advanced were configured. IAM policies and security groups were reviewed. Staff received targeted security training. |
+| **Detect**   | AWS CloudWatch, GuardDuty, and custom monitoring detected abnormal traffic and WAF bypass attempts. Alerts were configured for rapid escalation. |
+| **Respond**  | The incident response team blocked malicious IPs, updated WAF rules, and scaled resources using AWS Auto Scaling. Internal and external communications were managed per the incident response plan. |
+| **Recover**  | All services were restored to normal operation. A post-mortem was conducted, lessons learned were documented, and improvements were implemented. |
+
+### Drill Timeline
+- **Preparation:** Drill planning, scenario development, AWS environment setup, and stakeholder alignment (June 10, 2025)
+- **Attack Simulation:** DDoS and WAF evasion attacks launched (June 12, 2025, 10:00–12:00 UTC)
+- **Detection & Response:** Security team detected and responded to attacks in real time
+- **Recovery:** Systems restored, communications sent, and post-drill review held (June 12, 2025, 12:00–14:00 UTC)
+
+### Communication & Notification
+- **Internal:** All IT, Security, DevOps, and Executive teams were notified via Slack and email. Regular updates were provided during the drill. A debrief session was held post-drill.
+- **External:** No customer impact occurred. Prepared communication templates for customers and partners were reviewed. Compliance and legal teams were informed.
+
+### Outcomes & Improvements
+- AWS WAF and Shield Advanced effectively mitigated simulated attacks.
+- Detection and response times met or exceeded SLAs.
+- Identified need for additional WAF rule tuning and more frequent incident response training.
+- Updated incident response playbooks and improved cross-team communication protocols.
+- Recommendations for regular penetration testing and continuous improvement of AWS security posture.
+
+---
+
+## PLAN VERSION
+
+| VERSION | DATE       | AUTHOR     |
+|---------|------------|------------|
+| 1.0     | 2025-06-19 | John Smith |
+
+**REASON:** Initial release for annual cybersecurity drill documentation and compliance reporting.
+
+**SECTIONS IMPACTED**
+
+| SECTION TITLE         | AMENDMENT                |
+|----------------------|--------------------------|
+| All                  | Initial version created   |
+
+**DISTRIBUTION**
+
+| DELIVERY METHOD | ISSUE DATE | ISSUED TO         |
+|-----------------|------------|-------------------|
+| Email           | 2025-06-19 | Security Team     |
+| Email           | 2025-06-19 | Executive Team    |
+| Email           | 2025-06-19 | Compliance Team   |
+| Email           | 2025-06-19 | Customer Success  |
+
+---
+
+## RISK MANAGEMENT PROCESS
+
+The risk management process follows the NIST Cybersecurity Framework (CSF) and includes:
+- Regular audits of internal networks, systems, devices, and access privileges to identify potential gaps in security.
+- Implementation of policies, procedures, training, and technical controls to mitigate cybersecurity threats (e.g., firewall rules, IDS/IPS, network monitoring).
+- Continuous monitoring to detect abnormal traffic patterns and unauthorized access attempts.
+- Incident response procedures to contain, neutralize, and analyze security incidents, with updates to playbooks and staff training.
+- Recovery plans to restore affected systems, data, and operations, including regular backups and consideration of cyber insurance.
+- Post-incident reviews and lessons learned sessions to drive continuous improvement.
+
+---
+
+## RESOURCE REQUIREMENTS
+
+- AWS account with administrative access
+- Test environment mirroring production setup
+- Simulated attack traffic generators (for DDoS and WAF evasion)
+- Access to AWS security services (WAF, Shield, GuardDuty, Security Hub)
+- Communication tools (Slack, Email)
+- Documentation and tracking tools (Jira, Confluence)
+- Staff availability for drill participation and review
+
+---
+
+## TOOLS
+
+- AWS WAF (Web Application Firewall)
+- AWS Shield Advanced (DDoS protection)
+- AWS CloudWatch (monitoring and alerting)
+- AWS GuardDuty (threat detection)
+- AWS Security Hub (security posture management)
+- AWS IAM (access management)
+- Custom Lambda scripts for automated response
+- Slack and Email for internal communications
+- Jira/Confluence for documentation and tracking
+
+---
+
+## DATA
+
+- Synthetic test data used for attack simulation (no production data exposed)
+- Logs from AWS CloudWatch, GuardDuty, and WAF
+- Incident response documentation and communications
+- Post-drill analysis and lessons learned reports
+- Drill participation records and communication logs
+
+---
+
+## TEAM
+
+- **Security Operations Team:** Led detection, response, and mitigation efforts
+- **Cloud Infrastructure Team:** Managed AWS environment, scaling, and firewall configurations
+- **Application Security Team:** Reviewed and updated WAF rules, tested application-layer protections
+- **DevOps Team:** Supported automation and system recovery
+- **Compliance & Legal Team:** Ensured regulatory requirements and reporting
+- **Communications Team:** Managed internal and external notifications
+
+---
+
+## ROLES & RESPONSIBILITIES
+
+For each risk management plan activity, name parties responsible and define responsibilities.
+
+| Activity                        | Responsible Party         | Responsibilities |
+|----------------------------------|--------------------------|------------------|
+| Network Audits                   | Cybersecurity Team       | Regularly audit network, systems, and firewall configurations |
+| Incident Detection & Monitoring  | Security Operations      | Monitor network traffic, detect abnormal patterns, escalate incidents |
+| Incident Response                | Incident Management Team | Contain, neutralize, and analyze security incidents; update playbooks |
+| Recovery & Restoration           | IT & Security Operations | Restore systems, data, and services; test and verify backups |
+| Training & Awareness             | HR & Security            | Conduct staff training and awareness programs |
+| Legal & Compliance               | Management/Legal Counsel | Report incidents to authorities, assess legal impact |
+| Continuous Improvement           | All Teams                | Participate in lessons learned, implement improvements |
+
+---
+
+## FINANCIAL IMPACT
+
+- Two hours of network downtime resulted in potential loss of productivity and business operations.
+- Costs incurred for new firewall configuration, IDS/IPS deployment, and network monitoring tools.
+- Consideration for cyber insurance to mitigate future financial risks.
+- Potential legal and compliance costs if reporting to authorities is required.
+
+---
+
+## ESTIMATED FUNDS REQUIRED & BUDGETARY IMPACT
+
+| ESTIMATE         | ADDITIONAL COMMENTS |
+|------------------|--------------------|
+| INITIAL FEES     | $                  |
+| RECURRING FEES   | $                  |
+| ASSUMPTIONS      | $                  |
+| PRICING METHODOLOGY |                |
+| BUDGET IMPACT    |                    |
+
+---
+
+## TIMELINE IMPACT
+
+- The DDoS attack caused a two-hour outage of internal network services.
+- Critical services were restored as a priority; non-critical services were brought online after containment.
+- Recovery time objectives (RTO) will be reviewed and improved based on this incident.
+
+---
+
+## RISK MONITORING
+
+REVIEWS OF RISKS & ISSUES – Check for issues that may have escalated.
+
+**REVIEW FREQUENCY:** Quarterly and after every major incident or drill
+
+**PARTIES RESPONSIBLE FOR REVIEWING:** Security Operations Lead, Cloud Infrastructure Engineer, Compliance Officer
+
+---
+
+## MONITORING
+
+**REVIEW FREQUENCY:** Continuous (real-time monitoring via AWS CloudWatch and GuardDuty)
+
+**PARTIES RESPONSIBLE FOR REVIEWING:** Security Operations Team
+
+---
+
+## REPORTING
+
+**REVIEW FREQUENCY:** After every incident, drill, or quarterly review
+
+**PARTIES RESPONSIBLE FOR REVIEWING:** CISO, Compliance Officer, Communications Manager
+
+---
+
+## RISK CATEGORIES
+
+- Network Configuration Vulnerabilities (e.g., unconfigured firewalls)
+- Denial of Service (DoS/DDoS) Attacks
+- Insider Threats
+- Malware and Phishing
+- Data Loss and Backup Failures
+- Legal and Compliance Risks
+
+---
+
+## RISK ASSESSMENT MATRIX
+
+| RISK RATING KEY | LOW | MEDIUM | HIGH | EXTREME |
+|-----------------|-----|--------|------|---------|
+| ACCEPTABLE      | 0   |        |      |         |
+| ALARP           | 1   |        |      |         |
+| GENERALLY UNACCEPTABLE | 2 |   |      |         |
+| INTOLERABLE     | 3   |        |      |         |
+
+- OK TO PROCEED
+- TAKE MITIGATION EFFORTS
+- SEEK SUPPORT
+- PLACE EVENT ON HOLD
+
+| SEVERITY | ACCEPTABLE | TOLERABLE | UNDESIRABLE | INTOLERABLE |
+|----------|------------|-----------|-------------|-------------|
+| LITTLE TO NO EFFECT ON EVENT | EFFECTS ARE FELT, BUT NOT CRITICAL TO OUTCOME | SERIOUS IMPACT TO COURSE OF ACTION AND OUTCOME | COULD RESULT IN DISASTER |
+
+| LIKELIHOOD | IMPROBABLE | POSSIBLE | PROBABLE |
+|------------|------------|----------|----------|
+| RISK IS UNLIKELY TO OCCUR | RISK WILL LIKELY OCCUR | RISK WILL OCCUR |
+
+---
+
+## MITIGATION GRADING MATRIX
+
+| RISK MATRIX | SECTIONS IMPACTED | LOW | MEDIUM | HIGH | EXTREME |
+|-------------|-------------------|-----|--------|------|---------|
+| LIKELIHOOD  | LOW   | N | D | C | A |
+|             | MEDIUM| D | C | B | A |
+|             | HIGH  | C | B | A | A |
+
+**RISK MITIGATION BASED UPON GRADE**
+
+| GRADE | POSSIBLE ACTION |
+|-------|-----------------|
+| A     | As a priority, mitigation actions reducing both likelihood and seriousness are to be identified and implemented at start of project. |
+| B     | Mitigation actions reducing both likelihood and seriousness are to be identified and implemented throughout course of project. |
+| C     | Mitigation actions reducing both likelihood and seriousness are to be identified and costed for possible action should funds permit execution. |
+| D     | Risk to be noted: No action is required unless grading increases over time. |
+| N     | Risk to be noted: No action is required unless grading increases over time. |
+
+---
+
+## STAKEHOLDER TOLERANCES
+
+- Maximum allowable downtime for critical services: 30 minutes
+- Maximum allowable downtime for non-critical services: 2 hours
+- Cost contingency reserves set at 10% of annual security budget
+- Regular review of tolerances with executive and customer stakeholders
+
+---
+
+## ATTACHMENTS
+
+| FILE / DOCUMENT NAME         | FORMAT | DESCRIPTION                                 |
+|-----------------------------|--------|---------------------------------------------|
+| Firewall Configuration Log   | .log   | Evidence of firewall changes post-incident  |
+| IDS/IPS Deployment Report    | .pdf   | Documentation of new security controls      |
+| Network Monitoring Summary   | .pdf   | Abnormal traffic detection and response     |
+| Incident Response Playbook   | .docx  | Updated procedures for DDoS response        |
+| Lessons Learned Presentation | .pptx  | Staff debrief and future recommendations    |
+
+---
